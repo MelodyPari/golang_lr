@@ -12,7 +12,7 @@ import (
 
 func main() {
 	fmt.Print("Hello world")
-	file, err := os.Open("lr.json")
+	/*file, err := os.Open("lr.json")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -35,12 +35,12 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
-	}
+	}*/
 	dc := gg.NewContext(1000, 1000)
 	dc.SetHexColor("fff")
 
 	///
-	/*file2, err := os.Open("russia.json")
+	file2, err := os.Open("russia.json")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -62,6 +62,9 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+	dc.MoveTo(fc2.Features[0].Geometry.MultiPolygon[0][0][0][0], fc2.Features[0].Geometry.MultiPolygon[0][0][0][1])
+	dc.LineTo(fc2.Features[0].Geometry.MultiPolygon[0][0][1][0], fc2.Features[0].Geometry.MultiPolygon[0][0][1][1])
+	dc.LineTo(fc2.Features[0].Geometry.MultiPolygon[0][0][2][0], fc2.Features[0].Geometry.MultiPolygon[0][0][2][1])
 	//fmt.Print(len(fc2.Features[0].Geometry.MultiPolygon[0][0])
 	/*dc.MoveTo(fc2.Features[0].Geometry.MultiPolygon[0][0][0][0], fc2.Features[0].Geometry.MultiPolygon[0][0][0][1])
 	for i := 0; i < len(fc2.Features[0].Geometry.MultiPolygon[0][0]); i++ {
@@ -71,12 +74,12 @@ func main() {
 	}*/
 	///
 
-	dc.MoveTo(fc1.Features[0].Geometry.Polygon[0][0][0], fc1.Features[0].Geometry.Polygon[0][0][1])
+	/*dc.MoveTo(fc1.Features[0].Geometry.Polygon[0][0][0], fc1.Features[0].Geometry.Polygon[0][0][1])
 	for i := 0; i < 5; i++ {
 
 		dc.LineTo(fc1.Features[0].Geometry.Polygon[0][i][0], fc1.Features[0].Geometry.Polygon[0][i][1])
 
-	}
+	}*/
 
 	dc.SetRGB(0, 0, 1)
 	dc.InvertY()
